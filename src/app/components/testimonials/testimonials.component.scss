@@ -1,0 +1,57 @@
+.testimonials {
+    padding: 30px 0;
+  }
+  .testimonials h3 {
+    margin-bottom: 20px;
+  }
+  .testimonials .card {
+    border-bottom: 3px #fdd63a solid !important;
+    transition: 0.5s;
+    margin-top: 60px;
+  }
+  .testimonials .card i {
+    background-color: #fdd63a;
+    color: #ffffff;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    margin: -40px auto 0 auto;
+}
+  
+.heading {
+  margin-top: 0px;
+  font-size:32px;
+  font-weight: 600;
+}
+
+.separator {
+  position: relative;
+  display: inline-block;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.separator:after,
+.separator:before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #f4af00;
+  top: 50%;
+}
+
+.separator i {
+  color: #f4af00;
+}
+
+.separator:after {
+  right: 140%;
+}
+
+.separator:before {
+  left: 140%;
+}
+
+// .card-text p{
+//   font-size: 10px
+// }

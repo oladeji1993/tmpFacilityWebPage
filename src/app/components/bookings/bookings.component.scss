@@ -1,0 +1,26 @@
+
+
+h2 {
+    color: #f4af00;
+    font-weight: 500;
+  }
+
+.heading {
+    margin-top: 0px;
+    font-size:40px;
+}
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+button:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.loader{
+  margin-left:10px
+}

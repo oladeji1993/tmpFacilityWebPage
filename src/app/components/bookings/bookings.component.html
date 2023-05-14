@@ -1,0 +1,137 @@
+<div class="container mb-5">
+
+    <div class="row">
+        <div class="col-md-12 text-center heading-main">
+            <h2 class="heading">BOOK AUDITORIUM</h2>
+            <p>Please provide all required information</p>
+
+        </div>
+    </div>
+
+    <form [formGroup]="signupForm" (ngSubmit)="book()">
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <div class="form-outline">
+                    <label class="form-label" style="color:#f4af00 ; font-weight:550;; font-weight:500">Event
+                        Title</label>
+                    <input type="text" formControlName="eventTitle" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && signupForm.get('eventTitle')?.invalid}" />
+                    <div *ngIf="submitted && signupForm.get('eventTitle')?.invalid" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('eventTitle')?.hasError('required')">Event title is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" style="color:#f4af00 ; font-weight:550;; font-weight:500">Event Day of the
+                    Week</label>
+                <select class="form-select" formControlName="eventDay" [ngClass]="{ 'is-invalid': submitted && signupForm.get('eventDay')?.invalid}" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <div *ngIf="submitted && signupForm.get('eventDay')?.invalid" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('eventDay')?.hasError('required')">Event Day is required</div>
+                    </div>
+                </select>
+                <div *ngIf="submitted && signupForm.get('eventDay')?.invalid" class="invalid-feedback">
+                    Event Day is required
+                    <!-- <div *ngIf="signupForm.get('eventDay')?.hasError('required')">Event Day is required</div> -->
+                </div>
+            </div>
+            
+
+            <div class="col-md-6">
+                <div class="form-outline mt-2">
+                    <label class="form-label" style="color:#f4af00 ; font-weight:550;;font-weight:500">Event
+                        Date</label>
+                    <input type="date" class="form-control" formControlName="eventDate" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && signupForm.get('eventDate')?.invalid}" />
+                    <div *ngIf="submitted && signupForm.get('eventDate')?.invalid" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('eventDate')?.hasError('required')">Event Date is required</div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+            <div class="col-md-6">
+
+                <div class="form-outline mt-2">
+                    <label class="form-label"
+                        style="color:#f4af00 ; font-weight:550;; font-weight:500;">Requestor</label>
+                    <input type="text" class="form-control" formControlName="requestor"
+                        [ngClass]="{'is-invalid': submitted && signupForm.get('requestor')?.invalid}" />
+                    <div *ngIf="submitted && signupForm.get('eventDate')?.invalid" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('requestor')?.hasError('required')">Requestor date is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-outline mt-2">
+                    <label class="form-label" style="color:#f4af00 ; font-weight:550;;font-weight:500">Start
+                        Time</label>
+                    <input type="time" class="form-control" formControlName="startTime" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && signupForm.get('startTime')?.invalid}" />
+                    <div *ngIf="submitted && signupForm.get('startTime')?.invalid" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('startTime')?.hasError('required')">Start time is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-outline mt-2">
+                    <label class="form-label" style="color:#f4af00 ; font-weight:550;; font-weight:500;">End
+                        Time</label>
+                    <input type="time" class="form-control" formControlName="endTime"
+                        [ngClass]="{ 'is-invalid': submitted && signupForm.get('endTime')?.invalid}" />
+
+                    <div *ngIf="submitted && signupForm.get('endTime')?.invalid" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('endTime')?.hasError('required')">End time is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label mt-2" style="color:#f4af00 ; font-weight:550;; font-weight:500">Estimated
+                    number of
+                    participants/invitees</label>
+                <select class="form-select" formControlName="expectedParticipants" [ngClass]="{ 'is-invalid': submitted && signupForm.get('expectedParticipants')?.invalid}" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="50-100">50-100</option>
+                    <option value="100-200">100-200</option>
+                    <option value="200-300">200-300</option>
+                    <option value="300-400">300-400</option>
+                    <option value="500 and above">500 and above</option>
+                </select>
+                <div *ngIf="submitted && signupForm.get('expectedParticipants')?.invalid" class="invalid-feedback">
+                    <div *ngIf="signupForm.get('expectedParticipants')?.hasError('required')">Expected participants is required</div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-outline mt-2">
+                    <label class="form-label" style="color:#f4af00 ; font-weight:550;;font-weight:500">Phone Number</label>
+                    <input type="phone" class="form-control" formControlName="phone" class="form-control"
+                        [ngClass]="{'is-invalid': submitted && signupForm.get('phone')?.invalid}" />
+                    <div *ngIf="submitted && signupForm.get('phone')?.invalid" class="invalid-feedback">
+                        <div *ngIf="signupForm.get('phone')?.hasError('required')">Phone number is required
+                        </div>
+                        <div *ngIf="signupForm.get('phone')?.hasError('pattern')">Invalid mobile number.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5" style="display:flex; margin-top:10px; justify-content: center!important; float:right !important">
+                <div><button style="background-color:#f4af00 ; font-weight:550;; color:#fff" class="btn btn btn-lg">{{isLoading ? 'Loading...' : 'Book Auditorium'}}</button></div>
+                <div class="loader">
+                    <div *ngIf="isLoading" class="spinner-border text-secondary mt-2" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
